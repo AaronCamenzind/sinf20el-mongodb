@@ -1,2 +1,3 @@
-# emergency-git
-🔥 A git solution for saving your code in an emergency case 
+# Nodehost
+
+Create a new docker-cluster in order to host your npm modules registry there, instead of your current project structure. Saves more space and is more efficient.
