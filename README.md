@@ -8,3 +8,4 @@ Das Modul möchte den Schwerpunkt auf drei Bereiche legen:
 
 > Datenbank Betreiben, Auswerten und „erleben“: DB über Interface/View an zur Verfügung gestellte GUI-Applikation anschliessenund nutzen. Abfragen Testen, Messen und Vergleichen
 
+**Meine Wahl:** MongoDB mit Ruby SDK
