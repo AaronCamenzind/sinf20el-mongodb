@@ -61,11 +61,27 @@ Ubuntu 20.04 Client mit Ruby/MongoDB Bridge installiert
 
 ## Datenbank auf VM bmLP1 installieren
 
-1. Sie wählen eine zu Ihrer Datenbank passende VM. 
-2. Sie installieren die Datenbank auf Ihrer VM.
-3. Sie generieren die zu importierenden Daten mitfrigg.
-4. Sie erstellen die Datenstruktur auf der Datenbank.
-5. Sie erstellen die Benutzer auf der Datenbank. 
-6. Sie lassen Netzwerkverbindungen zu.
-7. Sie importieren die Daten in Ihre Datenbank.
-8. Sie binden die Applikation gna über das Netzwerk an Ihre Datenbank an
+1. Sie wählen eine zu Ihrer Datenbank passende VM.  
+3. Sie installieren die Datenbank auf Ihrer VM.
+5. Sie generieren die zu importierenden Daten mitfrigg.
+6. Sie erstellen die Datenstruktur auf der Datenbank.
+7. Sie erstellen die Benutzer auf der Datenbank. 
+8. Sie lassen Netzwerkverbindungen zu.
+9. Sie importieren die Daten in Ihre Datenbank.
+10. Sie binden die Applikation gna über das Netzwerk an Ihre Datenbank an
+
+### Mein Vorgehen bei der DB Installation auf bmLP1
+
+Ich habe zuerst die Firewall vmLF1 gestartet, damit die Ports und die zugehörigen Rules aktiviert werden.
+Danach habe ich die Ubuntu Vm bmLP1 gestartet. Dort wird sich die Installation der DB und alle zugehörigen Configs abspielen. Nach dem Starten der VM habe ich schnell bemerkt dass die VM nicht nach aussen kommunizieren kann. Ich habe dann die ICMP Verbindung von der Firewall vmLF1 zum Ubuntu Host bmLP1 getestet. LF1 erreicht LP1. Jedoch nicht umgekehrt. Ich habe danach die Virtualisierungs-Configs der VM bmLP1 überprüft und habe den Netzwerkadapter auf VMNet8 (NAT) umgestellt. Ping nach google DNS und intern funktioniert nun auf bmLP1.
+
+Nun muss ich zuerst den language-host für die NoSQL DB installieren. In meinem Fall ist das Ruby. Die installation von Ruby ist mit diesem COmmand gelöst
+
+```bash
+$ sudo apt-get install ruby
+```
+
+Testen ob ruby installiert ist mit: ```ruby -v```
+
+
+Die Installation auf der Unix Vm bmLP1 ist recht einfach, da 
