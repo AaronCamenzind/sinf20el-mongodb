@@ -4,6 +4,7 @@
 - [ ] Vorgehen Planen (this dokument / projektplan)
 - [ ] Netzwerkschema planen
 - [ ] Datensatz generieren (frigg)
+- [ ] Datenbank auf vm bmLP1 Smartlearn
 
 
 ## Ziel des Projektes
@@ -56,4 +57,15 @@ Benötigt einen Browser und sie Software «frigg» zum generieren der Daten
 #### Datenbank
 Ubuntu 20.04 Client mit Ruby/MongoDB Bridge installiert
 
+---
 
+## Datenbank auf VM bmLP1 installieren
+
+1. Sie wählen eine zu Ihrer Datenbank passende VM. 
+2. Sie installieren die Datenbank auf Ihrer VM.
+3. Sie generieren die zu importierenden Daten mitfrigg.
+4. Sie erstellen die Datenstruktur auf der Datenbank.
+5. Sie erstellen die Benutzer auf der Datenbank. 
+6. Sie lassen Netzwerkverbindungen zu.
+7. Sie importieren die Daten in Ihre Datenbank.
+8. Sie binden die Applikation gna über das Netzwerk an Ihre Datenbank an
