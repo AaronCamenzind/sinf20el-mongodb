@@ -99,14 +99,18 @@ Ich habe danach noch schnell mithilfe der interaktiven Ruby Umgebung IRB geteste
 
 ### Datensatz mit Frigg generieren
 
-```bash
-apt iunstall, open-vm-tools-desktop gdebi
-sudo gdebi frigg_0.4_all.deb 
-dpkg --remove --force-remove-reinstreq frigg
+Der Datensatz ~70MB wurde auf der Vm bmLP1 generiert.
 
-timoi
-sarkar
-INF20e
+```bash
+sudo apt install, open-vm-tools-desktop gdebi
+sudo gdebi frigg_0.4_all.deb 
+
+# falls dpkg im cache noch vorhanden ist
+# dpkg --remove --force-remove-reinstreq frigg
+
+Vorname: timo
+Nachname: sarkar
+Klasse: INF20e
 
 sudo frigg /opt/frigg > timo_sarkar.csv
 ```
