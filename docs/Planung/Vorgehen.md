@@ -81,6 +81,19 @@ Nun muss ich zuerst den language-host für die NoSQL DB installieren. In meinem 
 $ sudo apt-get install ruby
 ```
 
-Testen ob ruby installiert ist mit: ```ruby -v```. Danach den MongoDB Driver von Ruby mit ```gem install mongo``` installieren. Dort habe ich gemerkt, dass es Probleme mit nativen Erweiterungen hat. Headerfiles welche von RubyGems verwendet werden konnten nicht gefunden werden. Dieses Problem habe ich mit zwei weiteren apt packages gelöst: ``` sudo apt-get install ruby-dev```
+Testen ob ruby installiert ist mit: ```ruby -v```. Danach den MongoDB Driver von Ruby mit ```gem install mongo``` installieren. Dort habe ich gemerkt, dass es Probleme mit nativen Erweiterungen hat. Headerfiles welche von RubyGems verwendet werden konnten nicht gefunden werden. Dieses Problem habe ich mit zwei weiteren apt packages gelöst: ``` sudo apt-get install ruby-dev```. Danach funktioniert der Command ```gem install mongo``` wieder mit resultat:
+
+```
+root@bmLP1:/home/vmadmin# gem install mongo
+Building native extensions. This could take a while...
+Successfully installed bson-4.14.1
+Successfully installed mongo-2.17.0
+Parsing documentation for bson-4.14.1
+Installing ri documentation for bson-4.14.1
+Parsing documentation for mongo-2.17.0
+Installing ri documentation for mongo-2.17.0
+Done installing documentation for bson, mongo after 6 seconds
+2 gems installed
+```
 
 Die Installation auf der Unix Vm bmLP1 ist recht einfach, da 
