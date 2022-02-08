@@ -57,6 +57,31 @@ Benötigt einen Browser und sie Software «frigg» zum generieren der Daten
 #### Datenbank
 Ubuntu 20.04 Client mit Ruby/MongoDB Bridge installiert
 
+
+## Datenmodell
+
+Folgende Datenfelder müssen importiert werden:
+
+digest Eine eindeutige Hashsumme der Daten
+
+path Pfad zur Datei
+
+size Grösse der Daten in Byte
+
+type Dateityp der DatenmodeBerechtigungsmaske der Datei
+
+uid Benutzer-ID des Dateibesitzers
+
+user Name des Dateibesitzers
+
+gid Gruppen-ID der Dateigruppe
+
+group Name der Dateigruppe
+
+time Zeitstempel der letzten Änderung an der Datei als Unix-Timestamp
+
+compression Rate der DatenkompressiondataInhalt der Datei, teilweise komprimiert und immer im base64-Format abgebildet
+
 ---
 
 ## Datenbank auf VM bmLP1 installieren
