@@ -1,10 +1,10 @@
 # Vorgehen LB1 LB2 M141 
 
 - [x] Bewerbungsschreiben an Lehrperson für DB Wahl
-- [ ] Vorgehen Planen (this dokument / projektplan)
-- [ ] Netzwerkschema planen
-- [ ] Datensatz generieren (frigg)
-- [ ] Datenbank auf vm bmLP1 Smartlearn
+- [x] Vorgehen Planen (this dokument / projektplan)
+- [x] Netzwerkschema planen
+- [x] Datensatz generieren (frigg)
+- [x] Datenbank auf vm bmLP1 Smartlearn installieren
 
 
 ## Ziel des Projektes
