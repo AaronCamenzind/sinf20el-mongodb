@@ -97,4 +97,16 @@ Done installing documentation for bson, mongo after 6 seconds
 ```
 Ich habe danach noch schnell mithilfe der interaktiven Ruby Umgebung IRB getestet ob ich die installierte MongoDB Datenbank in ein Ruby Programm importieren kann.
 
-Die Installation auf der Unix Vm bmLP1 ist recht einfach, da 
+### Datensatz mit Frigg generieren
+
+```bash
+apt iunstall, open-vm-tools-desktop gdebi
+sudo gdebi frigg_0.4_all.deb 
+dpkg --remove --force-remove-reinstreq frigg
+
+timoi
+sarkar
+INF20e
+
+sudo frigg /opt/frigg > timo_sarkar.csv
+```
