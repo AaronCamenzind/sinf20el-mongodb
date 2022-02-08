@@ -95,5 +95,6 @@ Installing ri documentation for mongo-2.17.0
 Done installing documentation for bson, mongo after 6 seconds
 2 gems installed
 ```
+Ich habe danach noch schnell mithilfe der interaktiven Ruby Umgebung IRB getestet ob ich die installierte MongoDB Datenbank in ein Ruby Programm importieren kann.
 
 Die Installation auf der Unix Vm bmLP1 ist recht einfach, da 
