@@ -121,4 +121,6 @@ sudo frigg /opt/frigg > timo_sarkar.csv
 
 ## Firewall auf In und Outbounding Traffic konfigurieren
 
+# Licensing
 
+Copyright 2022 (C) Timo Sarkar <timo_sarkar@sluz.ch> <sartimo10@gmail.com> 
