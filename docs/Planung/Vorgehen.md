@@ -114,3 +114,11 @@ Klasse: INF20e
 
 sudo frigg /opt/frigg > timo_sarkar.csv
 ```
+
+## Datenstruktur erstellen
+
+## User und Berechtigungen erstellen
+
+## Firewall auf In und Outbounding Traffic konfigurieren
+
+
