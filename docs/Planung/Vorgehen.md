@@ -182,6 +182,10 @@ Beim erstellen der Datenstruktur hatten wir Probleme. Da wir unsere Entitäten u
 sudo chown vmadmin ./<datensatz_name>.csv
 ```
 
+> **https://sqlserverguides.com/create-tables-in-mongodb/**
+
+> **https://docs.mongodb.com/manual/reference/command/**
+
 ## User und Berechtigungen erstellen
 
 ## Firewall auf In und Outbounding Traffic konfigurieren
