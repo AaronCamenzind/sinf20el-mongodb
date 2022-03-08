@@ -142,6 +142,12 @@ sudo frigg /opt/frigg > timo_sarkar.csv
 
 ## Datenstruktur erstellen
 
+Beim erstellen der Datenstruktur hatten wir Probleme. Da wir unsere Entitäten und Attribute auswählen wollten, mussten wir das CSV File zuerst innerhalb von libreoffice  formatieren. Das öffnen der Datei in Libreoffice calc funktionierte aber nicht, da die Datei von Frigg vom user: root erstellt wurde und somit auch alle Zugriffsberechtigungen geändert worden sind. Wir haben den Dateibesitzer auf den user: vmadmin geändert.: 
+
+```bash
+sudo chown vmadmin ./<datensatz_name>.csv
+```
+
 ## User und Berechtigungen erstellen
 
 ## Firewall auf In und Outbounding Traffic konfigurieren
