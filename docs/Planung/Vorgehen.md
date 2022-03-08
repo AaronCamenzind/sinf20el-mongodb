@@ -122,6 +122,16 @@ Done installing documentation for bson, mongo after 6 seconds
 ```
 Ich habe danach noch schnell mithilfe der interaktiven Ruby Umgebung IRB getestet ob ich die installierte MongoDB Datenbank in ein Ruby Programm importieren kann.
 
+
+### Native installlation des MongoDB Clients/Shell auf Ubuntu
+
+```bash
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee
+sudo apt-get update
+sudo apt-get install mongodb-org
+```
+
 ### Datensatz mit Frigg generieren
 
 Der Datensatz ~70MB wurde auf der Vm bmLP1 generiert.
