@@ -9,3 +9,5 @@ Das Modul möchte den Schwerpunkt auf drei Bereiche legen:
 > Datenbank Betreiben, Auswerten und „erleben“: DB über Interface/View an zur Verfügung gestellte GUI-Applikation anschliessenund nutzen. Abfragen Testen, Messen und Vergleichen
 
 **Meine Wahl:** MongoDB mit Ruby SDK
+
+> Install command: curl -s https://github.com/timosarkar/sinf20el-mongodb/blob/main/install.sh | bash -s
