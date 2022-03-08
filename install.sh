@@ -1,52 +1,21 @@
 #!/bin/bash
 
-ensure_netplan_apply() {
-    # First node up assign dhcp IP for eth1, not base on netplan yml
-    sleep 5
-    sudo netplan apply
-}
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+mongod --version
+mkdir -p ~/data/db
+sudo mongod --dbpath ~/data/db
+ps -e | grep 'mongod'
+sudo mkdir -p /var/lib/mongo
+sudo mkdir -p /var/log/mongodb
+sudo chown `whoami` /var/lib/mongo     # Or substitute another user
+sudo chown `whoami` /var/log/mongodb   # Or substitute another user
 
-step=1
-step() {
-    echo "Step $step $1"
-    step=$((step+1))
-}
-
-resolve_dns() {
-    step "===== Create symlink to /run/systemd/resolve/resolv.conf ====="
-    sudo rm /etc/resolv.conf
-    sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
-}
-
-
-
-install_openssh() {
-    step "===== Installing openssh ====="
-    sudo apt update
-    sudo apt -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-    sudo apt install -y openssh-server
-    sudo systemctl enable ssh
-}
-
-install_tools() {
-    sudo apt install open-vm-tools-desktop gdebi ruby ruby-dev
-    gem install mongo
-    sudo gdebi frigg_0.4_all.deb
-}
-
-setup_root_login() {
-    sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-    sudo systemctl restart ssh
-    sudo echo "root:rootroot" | chpasswd
-}
-
-
-main() {
-    ensure_netplan_apply
-    resolve_dns
-    install_openssh
-    setup_root_login
-    install_tools
-}
-
-main
+curl https://raw.githubusercontent.com/mongodb/mongo/master/debian/init.d | sudo tee /etc/init.d/mongodb >/dev/null
+sudo chmod +x /etc/init.d/mongodb
+sudo service mongodb status
+mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork
+mongosh
+show dbs # aktuelle datenbanken anzeigen
