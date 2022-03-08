@@ -188,8 +188,11 @@ sudo chown vmadmin ./<datensatz_name>.csv
 
 > **https://www.quackit.com/mongodb/tutorial/mongodb_create_a_relationship.cfm#:~:text=To%20create%20a%20relationship%20in,is%20also%20true%20of%20relationships.**
 
+> **https://medium.com/analytics-vidhya/import-csv-file-into-mongodb-9b9b86582f34**
 
 ## User und Berechtigungen erstellen
+
+> **https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/**
 
 ## Firewall auf In und Outbounding Traffic konfigurieren
 
