@@ -123,13 +123,37 @@ Done installing documentation for bson, mongo after 6 seconds
 Ich habe danach noch schnell mithilfe der interaktiven Ruby Umgebung IRB getestet ob ich die installierte MongoDB Datenbank in ein Ruby Programm importieren kann.
 
 
-### Native installlation des MongoDB Clients/Shell auf Ubuntu
+### Native installlation des MongoDB Clients/Shell auf WSL 2.0 Ubuntu
 
 ```bash
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 sudo apt-get update
-sudo apt-get install mongodb-org
+sudo apt-get install -y mongodb-org
+mongod --version
+mkdir -p ~/data/db
+sudo mongod --dbpath ~/data/db
+ps -e | grep 'mongod'
+sudo mkdir -p /var/lib/mongo
+sudo mkdir -p /var/log/mongodb
+sudo chown `whoami` /var/lib/mongo     # Or substitute another user
+sudo chown `whoami` /var/log/mongodb   # Or substitute another user
+```
+
+#### Service skript für MongoDB Daemon auf WSL 2.0 Ubuntu
+
+```bash
+curl https://raw.githubusercontent.com/mongodb/mongo/master/debian/init.d | sudo tee /etc/init.d/mongodb >/dev/null
+sudo chmod +x /etc/init.d/mongodb
+sudo service mongodb status
+```
+
+### Datenbank starten und testen
+
+```bash
+mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork
+mongosh
+show dbs # aktuelle datenbanken anzeigen
 ```
 
 ### Datensatz mit Frigg generieren
