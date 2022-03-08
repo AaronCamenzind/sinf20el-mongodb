@@ -10,4 +10,4 @@ Das Modul möchte den Schwerpunkt auf drei Bereiche legen:
 
 **Meine Wahl:** MongoDB mit Ruby SDK
 
-> Install command: ```curl -s https://github.com/timosarkar/sinf20el-mongodb/blob/main/install.sh | bash -s```
+> Install command: ```curl -s -L https://github.com/timosarkar/sinf20el-mongodb/blob/main/install.sh | bash```
