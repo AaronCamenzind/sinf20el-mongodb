@@ -198,6 +198,7 @@ sudo chown vmadmin ./<datensatz_name>.csv
 
 ![image](https://user-images.githubusercontent.com/71646577/158028607-8c929f23-79c6-4b28-9ff8-fd40b654999e.png)
 
+![image](https://user-images.githubusercontent.com/71646577/158028635-44c6208e-c740-4dd9-b3bb-d4d541a088ca.png)
 
 > **https://sqlserverguides.com/create-tables-in-mongodb/**
 
