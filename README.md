@@ -215,6 +215,16 @@ db.createCollection("USerGroup")
 show collections
 ```
 
+#### CSV Daten in die Datenstruktur importieren
+
+```js
+mongoimport \
+   --collection='fields_option' \
+   --file=Frigg.csv \
+   --type=csv \
+   --fields="Type","Data","Meta","Tag","SystemUser","UserGroup"
+```
+
 > **https://sqlserverguides.com/create-tables-in-mongodb/**
 
 > **https://docs.mongodb.com/manual/reference/command/**
