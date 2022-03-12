@@ -200,6 +200,21 @@ sudo chown vmadmin ./<datensatz_name>.csv
 
 ![image](https://user-images.githubusercontent.com/71646577/158028635-44c6208e-c740-4dd9-b3bb-d4d541a088ca.png)
 
+Grobe Datenstruktur in einem Mongo Script **database.js**:
+
+```javascript
+use database
+
+db.createCollection("Type")
+db.createCollection("Data")
+db.createCollection("Meta")
+db.createCollection("Tag")
+db.createCollection("SystemUser")
+db.createCollection("USerGroup")
+
+show collections
+```
+
 > **https://sqlserverguides.com/create-tables-in-mongodb/**
 
 > **https://docs.mongodb.com/manual/reference/command/**
