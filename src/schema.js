@@ -13,6 +13,7 @@ db.createCollection("Type", {
                 bsonType: "int",
                 unique: "true",
                 index: "true",
+                description: "Primary Key",
             }
         }
     }
