@@ -61,6 +61,10 @@ db.createCollection("Meta", {
                 description: "Aktuelle Zeit",
             },
             
+            Fn_UserId: {
+               bsonType: ObejctId( /* objectid of UserID of table Systemuser */ ) 
+            },
+            
             MetaId: {
                 bsonType: "int",
                 unique: "true",
