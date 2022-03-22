@@ -1,7 +1,7 @@
 db.createCollection("Type", {
     validator: {
         bsonType: "object",
-        required: [ "TypeId", "Name" ],
+        required: [ "TypeId" ],
         properties: {
             Name: {
                 bsonType: "string",
@@ -18,21 +18,52 @@ db.createCollection("Type", {
         }
     }
 })
+
 db.createCollection("Systemuser", {
     validator: {
         bsonType: "object",
-        required: [ "userid", "Name" ],
+        required: [ "userid" ],
         properties: {
             Name: {
                 bsonType: "string",
-                maxlenght: 50,
+                maxlength: 50,
                 description: "Name Systemuser"
             },
 
-            userid: {
+            UserID: {
                 bsonType: "int",
                 unique: "true",
                 index: "true",
+                description: "Primary Key"
+            }
+        }
+    }
+})
+
+db.createCollection("Meta", {
+    validator: {
+        bsonType: "object",
+        required: [],
+        properties: {
+            Path: {
+                bsonType: "string",
+                maxlength: 100,
+                description: "Pfad"
+            },
+            
+            Perm: {
+                bsonType: "int",
+                description: "Perm",
+            },
+            
+            Time: {
+                bsonType: "timestamp",
+                description: "Aktuelle Zeit",
+            },
+            
+            MetaId: {
+                bsonType: "int",
+                unique: "true",
                 description: "Primary Key"
             }
         }
