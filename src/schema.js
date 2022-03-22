@@ -1,42 +1,19 @@
-db.createCollection("students", {
-   validator: {
-      $jsonSchema: {
-         bsonType: "object",
-         required: [ "name", "year", "major", "address" ],
-         properties: {
-            name: {
-               bsonType: "string",
-               description: "must be a string and is required"
+db.createCollection("Type", {
+    validator: {
+        bsonType: "object",
+        required: [ "TypeId", "Name" ],
+        properties: {
+            Name: {
+                bsonType: "string",
+                description: "Dateityp der Daten"
             },
-            year: {
-               bsonType: "int",
-               minimum: 2017,
-               maximum: 3017,
-               description: "must be an integer in [ 2017, 3017 ] and is required"
-            },
-            major: {
-               enum: [ "Math", "English", "Computer Science", "History", null ],
-               description: "can only be one of the enum values and is required"
-            },
-            gpa: {
-               bsonType: [ "double" ],
-               description: "must be a double if the field exists"
-            },
-            address: {
-               bsonType: "object",
-               required: [ "city" ],
-               properties: {
-                  street: {
-                     bsonType: "string",
-                     description: "must be a string if the field exists"
-                  },
-                  city: {
-                     bsonType: "string",
-                     description: "must be a string and is required"
-                  }
-               }
+
+            // Primary Key TypeID
+            TypeId: {
+                bsonType: "int",
+                unique: "true",
+                index: "true",
             }
-         }
-      }
-   }
+        }
+    }
 })
