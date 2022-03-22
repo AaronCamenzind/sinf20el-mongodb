@@ -18,3 +18,23 @@ db.createCollection("Type", {
         }
     }
 })
+db.createCollection("Systemuser", {
+    validator: {
+        bsonType: "object",
+        required: [ "userid", "Name" ],
+        properties: {
+            Name: {
+                bsonType: "string",
+                maxlenght: 50,
+                description: "Name Systemuser"
+            },
+
+            userid: {
+                bsonType: "int",
+                unique: "true",
+                index: "true",
+                description: "Primary Key"
+            }
+        }
+    }
+})
